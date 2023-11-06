@@ -27,7 +27,7 @@ function take_snapshot()
 
 console.log('ml5 version:', ml5.version);
 
-classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/2UsuX5Pqh/model.json',modelLoaded);
+classifier = ml5.imageClassifier('https://teachablemachine.withgoogle.com/models/Bal2z6Bla/model.json',modelLoaded);
 
 
 function modelLoaded() {
@@ -54,21 +54,33 @@ function gotResult(error, results)
         prediction_1 = results[0].label;
         prediction_2 = results[1].label;
         speak();
-        if(results[0].label == "happy")
+        if(results[0].label == "OK")
         {
-            document.getElementById("update_emoji").innerHTML = "&#128522;";
+            document.getElementById("update_emoji").innerHTML = "&#128076;";
         }
 
 
-        if(results[0].label == "sad")
+        if(results[0].label == "Good")
         {
-            document.getElementById("update_emoji").innerHTML = "&#128532;";
+            document.getElementById("update_emoji").innerHTML = "&#128077;";
         }
 
 
-        if(results[0].label == "angry")
+        if(results[0].label == "Peace")
         {
-            document.getElementById("update_emoji").innerHTML = "&#128548;";
+            document.getElementById("update_emoji").innerHTML = "&#9996;"
+        }
+
+
+        if(results[0].label == "Well Done")
+        {
+            document.getElementById("update_emoji").innerHTML = "&#128079;"
+        }
+
+
+        if(results[0].label == "High 5")
+        {
+            document.getElementById("update_emoji").innerHTML = "&#128400;"
         }
 
 
@@ -76,21 +88,48 @@ function gotResult(error, results)
 
 
 
-        if(results[1].label == "happy")
+
+
+
+
+
+
+        if(results[1].label == "OK")
         {
-            document.getElementById("update_emoji2").innerHTML = "&#128522;";
+            document.getElementById("update_emoji2").innerHTML = "&#128076;";
         }
 
 
-        if(results[1].label == "sad")
+        if(results[1].label == "Good")
         {
-            document.getElementById("update_emoji2").innerHTML = "&#128532;";
+            document.getElementById("update_emoji2").innerHTML = "&#128077;";
         }
 
-        if(results[1].label == "angry")
+
+        if(results[1].label == "Peace")
         {
-            document.getElementById("update_emoji2").innerHTML = "&#128548;";
+            document.getElementById("update_emoji2").innerHTML = "&#9996;"
         }
+
+
+        if(results[1].label == "Well Done")
+        {
+            document.getElementById("update_emoji2").innerHTML = "&#128079;"
+        }
+
+
+        if(results[1].label == "High 5")
+        {
+            document.getElementById("update_emoji2").innerHTML = "&#128400;"
+        }
+
+        
+
+
+
+
+
+
     }
 
 
